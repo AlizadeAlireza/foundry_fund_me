@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.19;
 
-import {Test} from "forge-std/Test.sol";
+import {Test, console} from "forge-std/Test.sol";
 
 contract FundMeTest is Test {
     uint24 x = 1;
@@ -13,6 +13,7 @@ contract FundMeTest is Test {
     }
 
     function testDemo() public {
+        console.log(x);
         assertEq(x, 22);
     }
 }
