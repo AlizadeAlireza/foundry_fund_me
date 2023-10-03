@@ -26,7 +26,7 @@ contract FundMeTest is Test {
         console.log(msg.sender);
         console.log(fundMe.i_owner());
         console.log(address(this));
-        assertEq(fundMe.i_owner(), address(this));
+        assertEq(fundMe.i_owner(), msg.sender);
     }
 
     function testPriceFeedVersionIsAccurate() public {
@@ -35,6 +35,6 @@ contract FundMeTest is Test {
     }
 
     function testGettingTheOwner() public {
-        assertEq(fundMe.getOwner(), address(this));
+        assertEq(fundMe.getOwner(), msg.sender);
     }
 }
