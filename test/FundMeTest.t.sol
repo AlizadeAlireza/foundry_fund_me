@@ -28,4 +28,8 @@ contract FundMeTest is Test {
         uint version = fundMe.getVersion();
         assertEq(version, 4);
     }
+
+    function testGettingTheOwner() public {
+        assertEq(fundMe.getOwner(), address(this));
+    }
 }
