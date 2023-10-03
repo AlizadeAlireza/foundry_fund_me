@@ -5,7 +5,7 @@ libs = ["lib"]
 remappings = [
     "@chainlink/contracts/=lib/foundry-chainlink-toolkit/lib/chainlink-brownie-contracts/contracts",
 ]
-ff1 = true
+ffi = true
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
 
 load_dotenv = true
