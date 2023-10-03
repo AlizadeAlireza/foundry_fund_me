@@ -38,6 +38,7 @@ contract HelperConfig is Script {
         sepoliaNetworkConfig = NetworkConfig({
             priceFeed: 0x694AA1769357215DE4FAC081bf1f309aDC325306 // eth/usd -> sepolia
         });
+        return sepoliaNetworkConfig;
     }
 
     function getMainNetEthConfig()
@@ -48,6 +49,7 @@ contract HelperConfig is Script {
         EthMainNetworkConfig = NetworkConfig({
             priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419 // ETH / USD
         });
+        return EthMainNetworkConfig;
     }
 
     function getOrCreateAnvilEthConfig()
@@ -67,5 +69,6 @@ contract HelperConfig is Script {
         emit HelperConfig__CreatedMockPriceFeed(address(mockPriceFeed));
 
         anvilNetworkConfig = NetworkConfig({priceFeed: address(mockPriceFeed)});
+        return anvilNetworkConfig;
     }
 }
