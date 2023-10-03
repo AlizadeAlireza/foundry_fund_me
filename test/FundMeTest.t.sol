@@ -124,4 +124,24 @@ contract FundMeTest is Test {
                 fundMe.getOwner().balance
         );
     }
+
+    function testCheaperWithdrawWithASingleFunder() public funded {
+        // arrange
+        uint startingOwnerBalance = fundMe.getOwner().balance;
+        uint startingFundMeBalance = address(fundMe).balance;
+
+        // act
+        vm.prank(fundMe.getOwner());
+        fundMe.cheaperWithdraw();
+
+        // assert
+        uint endingOwnerBalance = fundMe.getOwner().balance;
+        uint endingFundMeBalance = address(fundMe).balance;
+
+        assertEq(endingFundMeBalance, 0);
+        assertEq(
+            startingFundMeBalance + startingOwnerBalance,
+            endingOwnerBalance
+        );
+    }
 }
