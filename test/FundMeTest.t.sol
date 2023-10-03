@@ -7,9 +7,10 @@ import {FundMe} from "../src/FundMe.sol";
 
 contract FundMeTest is Test {
     FundMe fundMe;
+    address sepolia_priceFeed = 0x694AA1769357215DE4FAC081bf1f309aDC325306;
 
     function setUp() external {
-        fundMe = new FundMe();
+        fundMe = new FundMe(sepolia_priceFeed);
     }
 
     function testMinimumDollarIsFive() public {
