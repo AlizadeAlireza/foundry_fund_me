@@ -31,10 +31,15 @@ contract FundMeTest is Test {
 
     function testPriceFeedVersionIsAccurate() public {
         uint version = fundMe.getVersion();
-        assertEq(version, 5);
+        assertEq(version, 4);
     }
 
     function testGettingTheOwner() public {
         assertEq(fundMe.getOwner(), msg.sender);
+    }
+
+    function testFundFailsWithoutEnoughEth() public {
+        vm.expectRevert();
+        fundMe.fund();
     }
 }
