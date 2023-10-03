@@ -23,16 +23,11 @@ contract FundMeTest is Test {
         vm.deal(USER, STARTING_BALANCE);
     }
 
-    function testMinimumDollarIsFive() public {
-        assertEq(fundMe.MINIMUM_USD(), 5e18);
-        console.log("alireza");
-    }
-
     function testOwnerIsMsgSender() public {
         console.log(msg.sender);
-        console.log(fundMe.i_owner());
+        console.log(fundMe.getOwner());
         console.log(address(this));
-        assertEq(fundMe.i_owner(), msg.sender);
+        assertEq(fundMe.getOwner(), msg.sender);
     }
 
     function testPriceFeedVersionIsAccurate() public {
@@ -101,7 +96,6 @@ contract FundMeTest is Test {
     function testWithdrawFromMultipleFunders() public funded {
         // arrange
 
-        // assert
         uint160 numberOfFunders = 10;
         uint160 startingFunderIndex = 2;
 

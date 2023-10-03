@@ -20,8 +20,8 @@ contract FundMe {
     using PriceConverter for uint256;
 
     // State variables
-    uint256 public constant MINIMUM_USD = 5e18;
-    address public /*immutable*/ i_owner;
+    uint256 private constant MINIMUM_USD = 5e18;
+    address private /*immutable*/ i_owner;
     address[] private s_funders;
     mapping(address => uint256) private s_addressToAmountFunded;
     AggregatorV3Interface private s_priceFeed;
