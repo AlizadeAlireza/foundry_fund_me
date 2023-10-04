@@ -1,9 +1,3 @@
-// deploy mocks
-
-// keep track contract addresses
-
-// seploia or ................
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 import {MockV3Aggregator} from "../test/mock/MockV3Aggregator.sol";
